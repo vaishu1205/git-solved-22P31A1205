@@ -38,18 +38,3 @@ The following features are under evaluation and are **disabled by default**:
 npm install
 npm test
 npm run dev
-
-Documentation
-
-See the /docs folder for detailed documentation.
-
-Contributing
-
-Please read CONTRIBUTING.md before submitting pull requests.
-
-License
-
-MIT License
-
-
-
