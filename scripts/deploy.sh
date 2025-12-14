@@ -1,36 +1,59 @@
 #!/bin/bash
-# Production Deployment Script
-# Version: 1.0.0
 
 set -e
 
+ENVIRONMENT=$1
+
 echo "====================================="
-echo "DevOps Simulator - Production Deploy"
+echo "DevOps Simulator Deployment"
 echo "====================================="
 
-# Configuration
-DEPLOY_ENV="production"
-DEPLOY_REGION="us-east-1"
-APP_PORT=8080
-
-echo "Environment: $DEPLOY_ENV"
-echo "Region: $DEPLOY_REGION"
-echo "Port: $APP_PORT"
-
-# Pre-deployment checks
-echo "Running pre-deployment checks..."
-if [ ! -f "config/app-config.yaml" ]; then
-    echo "Error: Configuration file not found!"
-    exit 1
+if [ -z "$ENVIRONMENT" ]; then
+  echo "Usage: ./deploy.sh [production|development]"
+  exit 1
 fi
 
-# Deploy application
-echo "Starting deployment..."
-echo "Pulling latest Docker images..."
-# docker pull devops-simulator:latest
+echo "Environment: $ENVIRONMENT"
 
-echo "Rolling update strategy initiated..."
-# kubectl rolling-update devops-simulator
+# Pre-deployment checks
+if [ ! -f "config/app-config.yaml" ]; then
+  echo "Error: Configuration file not found!"
+  exit 1
+fi
 
-echo "Deployment completed successfully!"
-echo "Application available at: https://app.example.com"
+if [ "$ENVIRONMENT" = "production" ]; then
+  APP_PORT=8080
+  echo "Starting production deployment..."
+
+  echo "Installing production dependencies..."
+  npm install --only=production
+
+  echo "Building application..."
+  npm run build
+
+  echo "Starting production server..."
+  npm start
+
+  echo "Application available at: https://app.example.com"
+
+elif [ "$ENVIRONMENT" = "development" ]; then
+  APP_PORT=3000
+  echo "Starting development deployment..."
+
+  echo "Installing dependencies..."
+  npm install
+
+  echo "Running tests..."
+  npm test
+
+  echo "Starting development server..."
+  npm run dev
+
+  echo "Application available at: http://localhost:$APP_PORT"
+
+else
+  echo "Invalid environment: $ENVIRONMENT"
+  exit 1
+fi
+
+echo "Deployment completed successfully"
