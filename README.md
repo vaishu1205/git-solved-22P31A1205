@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # DevOps Simulator
 
 A comprehensive CI/CD configuration management tool for enterprise deployments.
@@ -39,7 +38,10 @@ The following features are under evaluation and are **disabled by default**:
 npm install
 npm test
 npm run dev
-=======
+
 # git-mastery-challenge-template
 A hands-on task to learn and practice Git and GitHub basics — including commits, branches, pull requests, and collaboration.
->>>>>>> ae630eb (Initial commit)
+ae630eb (Initial commit)
+
+Rebase demonstration completed.
+
