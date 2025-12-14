@@ -1,0 +1,22 @@
+* 47649ba Add CHANGELOG
+* 04fbf35 Add GIT_JOURNEY documentation
+* 1bf34fe Revert "revert demo commit"
+* e0ce455 revert demo commit
+* 2e31600 docs: add rebase demonstration line
+* 62f4c6d Initial commit
+| * 01f11b0 On main: temp: save README change before testing other git commands
+|/| 
+| * 1a9da73 index on main: 8ab0a9b merge: resolve conflicts between main and conflict-simulator, keeping stable production configuration
+|/  
+* 8ab0a9b merge: resolve conflicts between main and conflict-simulator, keeping stable production configuration
+*   e42ff89 merge: resolve conflicts between main and conflict-simulator, keeping stable production configuration
+|\  
+| * d3dd9b2 updating conflict-simulator
+* |   9ad7ba8 merge: resolve conflicts between main and dev branches
+|\ \  
+| * | 02011a5 updating dev
+| |/  
+* | 0312c6f updating main
+* | fadfd24 Revise README for DevOps Simulator project
+|/  
+* ae630eb Initial commit
