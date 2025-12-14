@@ -3,16 +3,32 @@
     "host": "prod-db.example.com",
     "port": 5432,
     "database": "devops_prod",
-    "username": "prod_user",
+    "username": "prod_admin",
     "ssl": true,
-    "pool_size": 20
+    "pool_size": 20,
+    "timeout": 30
   },
+
   "development": {
     "host": "localhost",
     "port": 5432,
     "database": "devops_dev",
     "username": "dev_user",
     "ssl": false,
-    "pool_size": 5
+    "pool_size": 5,
+    "timeout": 10
+  },
+
+  "experimental": {
+    "enabled": false,
+    "host": "cluster.example.com",
+    "port": 5432,
+    "database": "devops_experimental",
+    "distributed": true,
+    "replication": {
+      "enabled": true,
+      "mode": "semi-synchronous",
+      "regions": ["us-east", "eu-west", "ap-south"]
+    }
   }
 }

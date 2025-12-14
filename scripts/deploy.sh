@@ -25,13 +25,8 @@ if [ "$ENVIRONMENT" = "production" ]; then
   APP_PORT=8080
   echo "Starting production deployment..."
 
-  echo "Installing production dependencies..."
   npm install --only=production
-
-  echo "Building application..."
   npm run build
-
-  echo "Starting production server..."
   npm start
 
   echo "Application available at: https://app.example.com"
@@ -40,13 +35,8 @@ elif [ "$ENVIRONMENT" = "development" ]; then
   APP_PORT=3000
   echo "Starting development deployment..."
 
-  echo "Installing dependencies..."
   npm install
-
-  echo "Running tests..."
   npm test
-
-  echo "Starting development server..."
   npm run dev
 
   echo "Application available at: http://localhost:$APP_PORT"

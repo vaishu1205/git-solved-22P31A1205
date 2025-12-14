@@ -19,12 +19,12 @@ A comprehensive CI/CD configuration management tool for enterprise deployments.
 - Multi-cloud support (AWS, Azure, GCP)
 - Slack/Discord notifications
 
-## New Features (In Development)
-- Kubernetes orchestration support
-- Blue-green deployment strategy
-- Enhanced monitoring dashboard
-- OAuth2 authentication
-- Docker Compose integration
+## Experimental Features
+The following features are under evaluation and are **disabled by default**:
+- AI-powered deployment optimization
+- Predictive auto-scaling
+- Chaos engineering tools
+- Event-driven workflows
 
 ## Quick Start
 1. Clone the repository
@@ -34,16 +34,22 @@ A comprehensive CI/CD configuration management tool for enterprise deployments.
 5. Monitor system health
 
 ## Development Setup
+```bash
 npm install
 npm test
 npm run dev
 
+Documentation
 
-## Documentation
-See the `/docs` folder for detailed documentation.
+See the /docs folder for detailed documentation.
 
-## Contributing
+Contributing
+
 Please read CONTRIBUTING.md before submitting pull requests.
 
-## License
+License
+
 MIT License
+
+
+

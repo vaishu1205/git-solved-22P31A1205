@@ -1,81 +1,66 @@
 # System Architecture
 
 ## Overview
-DevOps Simulator follows a microservices-based architecture designed for scalability, reliability, and ease of deployment across environments.
+DevOps Simulator follows a microservices-based architecture designed for stability in production and flexibility during development.
 
 ---
 
 ## Production Architecture
 
-### 1. Application Server
+### Application Layer
 - Technology: Node.js with Express
 - Port: 8080
 - Scaling: Horizontal auto-scaling enabled
+- Load balancing enabled
 
-### 2. Database Layer
-- Database: PostgreSQL 14
-- Configuration: Master-slave replication
-- Backup: Daily automated backups
+### Database Layer
+- Database: PostgreSQL
+- Configuration: Primary with read replicas
+- Backups: Daily automated backups
+- Secure connections enabled
 
-### 3. Monitoring System
+### Monitoring
 - Tools: Prometheus and Grafana
 - Metrics: CPU, Memory, Disk, Network
-- Alerts: Email notifications for critical issues
+- Alerts: Email alerts for critical failures
 
 ### Deployment Strategy
-- Method: Rolling updates
-- Zero-downtime deployment: Enabled
-- Rollback: Automatic rollback on failure
+- Rolling updates
+- Zero downtime deployments
+- Automatic rollback on failure
 
 ### Security
-- SSL/TLS encryption enabled
+- SSL/TLS enabled
 - Encrypted database connections
-- Regular security audits
+- Access control policies applied
 
 ---
 
 ## Development & Experimental Architecture
 
-This section describes features used only in development and testing environments.
+This section applies only to development or testing environments.
 
-### Application Server (Development)
+### Application (Development)
 - Port: 3000
 - Hot reload enabled
-- Debugging support using Chrome DevTools
+- Debugging enabled
 
 ### Database (Development)
-- Single local PostgreSQL instance
+- Single local instance
 - Manual backups
-- Automatic test data seeding
+- Test data seeding enabled
 
-### Monitoring (Development)
-- Console-based logging
-- Optional Prometheus integration
-- In-progress monitoring dashboard
-
-### Containerization
-- Tool: Docker Compose
-- Services: Application, Database, Redis
-- Volume mounts for live code reload
-
-### Authentication (Beta)
-- OAuth2 with JWT
-- Test providers: Google, GitHub
-- Redis-based session storage
-
-### Development Workflow
-1. Make code changes
-2. Auto-reload application
-3. Run tests
-4. Review logs
-5. Commit changes
+### Containers
+- Docker Compose for local orchestration
+- Services: App, Database, Cache
+- Volume mounts for live reload
 
 ### Experimental Features
-- Multi-cloud deployment
-- AI-based log analysis
-- Automatic rollback experiments
+- AI-based monitoring (disabled by default)
+- Multi-cloud deployment testing
+- Chaos testing experiments
 
 ---
 
 ## Notes
-Experimental features are isolated from production and enabled only in development environments.
+Experimental features are isolated from production and must be explicitly enabled.
